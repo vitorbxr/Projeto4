@@ -50,11 +50,11 @@
               <legend>Identificação do Usuário</legend>
               <p>
                 <label for="cnome">Nome:</label>
-                <input type="text" name="tnome" id="cnome" size="20" maxlength="100" placeholder="Nome Completo" />
+                <input type="text" name="tnome" id="cnome" size="20" maxlength="100" placeholder="Nome Completo" required />
               </p>
               <p>
                 <label for="csenha">Senha:</label>
-                <input type="password" name="tsenha" id="csenha" size="8" maxlength="8" placeholder="8 Digitos" />
+                <input type="password" name="tsenha" id="csenha" size="8" maxlength="8" placeholder="8 Digitos"  required/>
               </p>
               <p>
                 <label for="cmail">E-mail:</label>
@@ -75,7 +75,7 @@
                 <legend>Endereço do Usuário</legend>
                 <p>
                   <label for="crua">Logradouro:</label>
-                  <input type="text" name="trua" id="crua" size="13" maxlength="80" placeholder="Av, Rua, Travessa" />
+                  <input type="text" name="trua" id="crua" size="13" maxlength="80" placeholder="Av, Rua, Travessa" required />
                 </p>
                 <p>
                   <label for="crua">Número:</label>
@@ -100,7 +100,7 @@
                 </p>
                 <p>
                   <label for="ccid">Cidade:</label>
-                  <input type="text" name="tcid" id="ccid" maxlength="40" size="20" placeholder="Sua Cidade" list="datalist" />
+                  <input type="text" name="tcid" id="ccid" maxlength="40" size="20" placeholder="Sua Cidade" list="datalist" required />
                 </p>
                 <datalist id="datalist">
                   <option value="Rio de Janeiro"></option>
