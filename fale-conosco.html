@@ -45,20 +45,20 @@
               <h3 class="direita">Atualizado em 01/Maio/2013</h3>
             </hgroup>
           </header>
-          <form method="post" id="fcontato" action="mailto:vitor.bxr@gmail.com" oninput="calc_total();">
+          <form method="post" id="fcontato" action="mailto:vitor.bxr@gmail.com" oninput="calc_total();" autocomplete="on">
             <fieldset id="usuario">
               <legend>Identificação do Usuário</legend>
               <p>
                 <label for="cnome">Nome:</label>
-                <input type="text" name="tnome" id="cnome" size="20" maxlength="100" placeholder="Nome Completo" required />
+                <input type="text" name="tnome" id="cnome" size="20" maxlength="100" placeholder="Nome Completo" autocomplete="username" required />
               </p>
               <p>
                 <label for="csenha">Senha:</label>
-                <input type="password" name="tsenha" id="csenha" size="8" maxlength="8" placeholder="8 Digitos"  required/>
+                <input type="password" name="tsenha" id="csenha" size="8" minlength="8" maxlength="8" placeholder="8 Digitos" autocomplete="current-password"  required/>
               </p>
               <p>
                 <label for="cmail">E-mail:</label>
-                <input type="email" name="tmail" id="cmail" size="20" maxlength="40" placeholder="Digite o E-Mail" />
+                <input type="email" name="tmail" id="cmail" size="20" maxlength="40" placeholder="Digite o E-Mail" autocomplete="email" />
               </p>
               <fieldset id="sexo">
                 <legend>Sexo:</legend>
@@ -68,7 +68,7 @@
               </fieldset>
               <p>
                 <label>Data de Nascimento:</label>
-                <input type="date" name="tnasc" id="cnasc" />
+                <input type="date" name="tnasc" id="cnasc" autocomplete="bday" />
               </p>
             </fieldset>
               <fieldset id="endereco">
@@ -115,8 +115,9 @@
                   <p>
                     <label for="curg">Grau de Urgência:</label>
                     Min
-                    <input type="range" name="turg" id="curg" min="0" max="10" step="2">
+                    <input type="range" name="turg" id="curg" min="0" max="12" step="2" value="6" oninput="val.innerHTML = Number(curg.value)">
                     Max
+                    <output id="val">6</output>
                   </p>
                   <p>
                     <label for="cmsg">Mensagem:</label>
@@ -136,7 +137,7 @@
                 </p>  
                 <p>
                   <label for="cqtd">Quantidade:</label>
-                  <input type="number" name="tqtd" id="cqtd" min="0" max="5" />
+                  <input type="number" name="tqtd" id="cqtd" min="0" max="5" step="0.5" />
                 </p>
                 <p>
                   <label for="ctot">Preço Total: R$</label>
@@ -144,7 +145,11 @@
                     
                 </p>
               </fieldset>
-            <input type="image" name="tenviar" src="_imagens/botao-enviar.png">
+            <input type="image" name="tenviar" src="_imagens/botao-enviar.png"> <br>
+            <input type="reset" value="Limpar">
+            <p>Selecione o mes <input type="month" name="month" id="month"></p>
+            <p>Selcione a hora <input type="time" name="hora" id="hora"></p>
+            <p>Telefone <input type="tel" name="tel" id="tel" autocomplete="tel" placeholder="(00)0000-0000" pattern="^\(\d{2}\)\d{4}-\d{4}$"></p>
           </form>
         </article>
       </section>
